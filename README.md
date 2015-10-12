@@ -13,6 +13,7 @@ Moose and Slug.
 Running an example
 -------------------
 First make sure that the slug executable file is on the path:
+
     export PATH=$PATH:<path to where-ever the slug-opt executable is>
 
 The simulation can be run from inside the example directory by 
