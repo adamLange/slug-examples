@@ -1,5 +1,21 @@
 [GlobalParams]
-  vel_surface = '44.707 0 0'
+  # This is the sliding velocity of the bearing.
+  # For example if vel_surface = '44.707 0 0',
+  # the surface below the film is moving
+  # at 44.707 m/s under the film in the positive
+  # x-direction.  
+  #
+  # Keep it in the x-y plane!
+  # And for now, keep it on the x-axis.
+  # A TODO list is to fix this problem.
+  # Watch out! sliding velocity gives the problem
+  # hyperbolic characteristics, and potential 
+  # instability.  
+  #
+  # Note: you must change this in Kernels/pressure
+  # below to match the x component of vel_surface.
+
+  vel_surface = '0 0 0'
 []
 
 [Mesh]
@@ -56,7 +72,8 @@
     type = CompressibleReynoldsPressure
     variable = p
     h = h
-    v = 44.707 # 44.707 
+    v = 0 # Make sure this matches the x component of
+          # vel surface.
   [../]
 []
 
